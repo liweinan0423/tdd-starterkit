@@ -3,8 +3,8 @@
 * given 4 when fizzbuzz then 4
 
 
-given 3 when fizzbuzz then fizz
-given 6 when fizzbuzz then fizz
+* given 3 when fizzbuzz then fizz
+* given 6 when fizzbuzz then fizz
 given 9 when fizzbuzz then fizz
 
 given 5 when fizzbuzz then buzz

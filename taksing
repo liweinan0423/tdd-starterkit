@@ -5,10 +5,11 @@
 
 * given 3 when fizzbuzz then fizz
 * given 6 when fizzbuzz then fizz
-given 9 when fizzbuzz then fizz
+* given 9 when fizzbuzz then fizz
 
-given 5 when fizzbuzz then buzz
-given 10 when fizzbuzz then buzz
-given 25 when fizzbuzz then buzz
+* given 5 when fizzbuzz then buzz
+* given 10 when fizzbuzz then buzz
+* given 25 when fizzbuzz then buzz
 
-given 15 when fizzbuzz then fizzbuzz
+* given 15 when fizzbuzz then fizzbuzz
+* given 30 when fizzbuzz then fizzbuzz

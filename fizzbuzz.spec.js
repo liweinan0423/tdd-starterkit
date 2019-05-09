@@ -5,6 +5,7 @@ describe('fizzbuzz', () => {
     testNormalNumber(4)
     testFizz(3);
     testFizz(6);
+    testFizz(9);
 })
 
 
@@ -20,5 +21,5 @@ function testNormalNumber(number) {
 }
 
 function fizzbuzz(number) {
-    return [3, 6].indexOf(number) > -1 ? 'fizz' : number;
+    return number % 3 === 0 ? 'fizz' : number;
 }

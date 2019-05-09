@@ -10,7 +10,7 @@ describe('fizzbuzz', () => {
 
 function fizzbuzz(number) {
     if (number == 2) {
-        return 2
+        return number
     }
     return 1
 }

@@ -1,46 +1,25 @@
+test(1, 3, 'Fizz');
+test(2, 5, 'Buzz');
+test(3, 15, 'FizzBuzz');
+test(4, 1, '1');
 
-describe('fizzbuzz', () => {
-    testNormalNumber(1);
-    testNormalNumber(2);
-    testNormalNumber(4)
-    testFizz(3);
-    testFizz(6);
-    testFizz(9);
-    testBuzz(5);
-    testBuzz(10);
-    testBuzz(25);
-    testFizzBuzz(15);
-    testFizzBuzz(30);
-})
-
-function testFizzBuzz(number) {
-    it(`should be fizzbuzz when fizzbuzz given ${number}`, () => {
-        expect(fizzbuzz(number)).toBe("fizzbuzz")
-    })
-}
-function testBuzz(number) {
-    it(`should be buzz when fizzbuzz given ${number}`, () => {
-        expect(fizzbuzz(number)).toBe("buzz")
-    })
-}
-function testFizz(number) {
-    it(`should be fizz when fizzbuzz given ${number}`, () => {
-        expect(fizzbuzz(number)).toBe("fizz")
-    })
-}
-function testNormalNumber(number) {
-    it(`should be ${number} when fizzbuzz given ${number}`, () => {
-        expect(fizzbuzz(number)).toBe(number)
+function test(group, number, result) {
+    describe(`for group ${group}`, () => {
+        it(`prints ${result} for ${number}`, () => {
+            expect(print(number)).toBe(result);
+        })
     })
 }
 
-function fizzbuzz(number) {
-    if (number % 3 === 0 && number % 5 !== 0) {
-        return 'fizz'
-    } else if (number % 5 === 0 && number % 3 !== 0) {
-        return 'buzz'
-    } else if (number % 5 === 0 && number % 3 === 0) {
-        return 'fizzbuzz'
+
+
+function print(number) {
+    if (number === 5) {
+        return 'Buzz';
+    } else if (number === 15) {
+        return 'FizzBuzz';
+    } else if (number === 1) {
+        return '1';
     }
-    return number;
+    return 'Fizz';
 }

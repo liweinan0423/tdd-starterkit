@@ -113,6 +113,9 @@ describe('exception handling', () => {
         it('invalid boolean value', () => {
             expect(() => new ArgsParser('l', '-l foo').get('l')).toThrow('foo is not a boolean value')
         })
+        it('unknown arg', () => {
+            expect(() => new ArgsParser('p#,d*,l', '-d /var/logs/ -p 8080 -l -g')).toThrow('unknown arg: -g')
+        })
     })
 })
 class ArgsParser {
@@ -138,7 +141,11 @@ class ArgsParser {
             if (token.startsWith('-')) {
                 const argName = token.substring(1)
                 const arg = this.schema[argName]
-                arg.set(tokens, i)
+                if (arg) {
+                    arg.set(tokens, i)
+                } else {
+                    throw new Error(`unknown arg: ${token}`)
+                }
             }
         }
     }
